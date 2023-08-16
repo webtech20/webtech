@@ -1086,6 +1086,11 @@ body{
     #ab{
        flex-direction: column;
     }
+    #hero-con h3{
+    color: #f01a1a;
+    text-transform: uppercase;
+        margin-top:60px;
+}
     #plan{
         flex-direction: column;
     }
