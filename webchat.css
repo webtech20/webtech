@@ -1,0 +1,147 @@
+body
+{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+html
+{
+    scroll-behavior: smooth;
+}
+#chat-box-main-inner
+{
+    height: 360px;
+    overflow-y: scroll;
+    width: 250px;
+    background-color: rgb(222, 222, 222);
+    border-radius: 10px;
+    padding: 3px 0px;
+    position: relative;
+}
+#cb-head
+{
+    padding: 10px 30px;
+}
+.option-chat
+{
+    float: right;
+    display: block;
+     
+}
+.response-chat-box
+{
+    background-color: red;
+}
+.option-chat p
+{
+    background-color: red;
+    color: white;
+    padding: 0px 10px ;
+    width: 160px;
+    height: fit-content;
+    font-size: 14px;
+    border-radius: 10px 0 0 10px;
+}
+.fixed-msg
+{
+    width: 100%;
+    display: block;
+    float: left;
+    padding: 2px 20px 18px 20px;
+}
+.fixed-msg p 
+{
+    padding: 0px;
+    margin: 0px;
+}
+.chat-input
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    position: sticky;
+    bottom: 0;
+}
+
+#user-input
+{
+    /* width: 100%; */
+     width: 200px;
+    border: none;
+    background-color: white;
+    border-radius:  0 0;
+    padding: 6px 20px;
+}
+.chat-input button
+{
+    border: none;
+    background-color: white;
+}
+#rcb
+{
+    display: block;
+    float: left;
+    
+}
+.response-chat-box h5
+{
+    font-size: 16px;
+    margin-top: 0px;
+}
+.response-chat-box p
+{
+    width: 220px;
+
+    margin-bottom: 0px;
+    color: white;
+    font-weight: 400;
+    padding: 20px 0px 10px 10px;
+    margin-top: 0px;
+    background-color: red;
+    border-radius:  0 10px 10px 0;
+
+}
+.chat-btn-con
+{
+    background-color: white;
+    border: none;
+    padding: 4px;
+    border-radius: 5px;
+    color: black;
+    margin: 4px;
+}
+.web-con-btn
+{
+    background-color: white;
+    color: red;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin: 10px;
+}
+.chat-link a
+{
+    color: white;
+    text-decoration: none;
+}
+#chat-scroll
+{
+    height: 27px;
+    width: 28px;
+    border-radius: 50px;
+    background-color: red;
+    position: fixed;
+    bottom: 100px;
+    right: 80px;
+    color: white;
+    text-align: center;
+    z-index: 100;
+}
+#chat-scroll a
+{
+    text-decoration: none;
+    color: white;
+}

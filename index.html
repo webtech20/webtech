@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link bootstrap , font awesome  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- link css -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="webchat.css">
+
+    <title>home</title>
+
+    <!-- style for chat box start -->
+    <style>
+
+        /* skills bar css */
+
+
+        .skillset .skillbar {
+	height:30px;
+  color:#0D0E0E;
+  width:0px;
+	border-radius:8px;
+  text-align:center;
+text-shadow:0.8px 0.7px #212121;
+	transition:0.4s linear;
+	transition-property:width;
+}
+.skillset .skillbar-container{
+  width:75%;
+  border: 1px solid #212121;
+  background-color:#424242;
+  border-radius:8px;
+  margin-bottom:2%;
+
+
+}
+.skillset{
+  /* border: 2px black solid; */
+  border-radius: 12px;
+  padding: 2%;
+  width:100%;
+  /* background: #0D0E0E; */
+  background-color: #efefef;
+
+  opacity: 0.8;
+  text-align: center;
+}
+.skillset ul {
+  list-style-type: none;
+  display:inline;
+}
+.skillset h3
+{
+    text-align: center;
+}
+footer{
+  text-align:center;
+}
+a{
+ color:#000;
+}
+footer{
+  text-align:center;
+}
+a{
+ color:#000;
+}
+   
+        /* skills bar css end */
+        #en-main {
+            /* background-color: white; */
+            /* width: 300px; */
+            /* border-radius: 30px; */
+            /* box-shadow: .2px .5px 2px 3px rgb(55, 49, 49); */
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            z-index: 3;
+            margin: 0px 30px;
+            display: none;
+        }
+
+        #en-head {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            display: inline-block;
+            width: 100%;
+            padding: 30px 20px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        #en-head img {
+            display: inline-block;
+        }
+
+        #en-head h5 {
+            display: inline-block;
+        }
+
+        #chat-space {
+            height: 300px;
+            overflow: scroll;
+            scroll-behavior: smooth;
+            padding: 20px;
+            background-color: #bcbce7;
+
+        }
+
+        #chat-space::-webkit-scrollbar {
+            display: none;
+        }
+
+        #chat-input {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            width: 100%;
+            border-radius: 0 0 20px 20px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+        }
+
+        #chat-inp {
+            width: 70%;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #bcbce7;
+            /* display: inline-block; */
+        }
+
+        #send-btn {
+            color: rgb(0, 0, 0);
+            margin: 2px 0px 2px 20px;
+            font-size: 16px;
+            border: none;
+            /* display: inline-block; */
+        }
+
+        .chat-cs {
+            width: 100%;
+            flex-direction: column;
+            flex-wrap: wrap;
+            display: flex;
+        }
+
+        #chat-cust {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            float: right;
+        }
+
+        #default-chat {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            float: right;
+        }
+
+        #chat-come {
+            color: white;
+            font-size: 17px;
+            background-color: rgb(152, 128, 128);
+            border-radius: 20px;
+            /* margin: 10px; */
+            width: fit-content;
+            height: fit-content;
+            padding: 5px 30px;
+            float: right;
+            margin: 2px;
+            display: flex;
+            justify-content: right;
+            flex-wrap: wrap;
+            /* flex-direction: column; */
+            /* margin: 10px; */
+        }
+
+        #default-chat p {
+            background-color: rgb(209, 209, 128);
+            margin: 2px 10px;
+            border-radius: 20px;
+            padding: 4px 20px;
+            animation: anichat 2s linear forwards;
+
+            font-size: 20px;
+
+        }
+
+        #chat-box {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            z-index: 1;
+           
+        }
+         #chat-box i 
+         {
+            animation: pulse 1s linear infinite;
+            box-shadow: 0 0 0 0 black;
+            border-radius: 50px;
+            transition: all 10ms;
+         }
+
+        @keyframes pulse {
+            0%
+            {
+                transform: scale(1,1);
+            }
+            /* 50%
+            {
+                transform: scale(1.2,1.2);
+            } */
+            100%
+            {
+                transform: scale(1.4,1.4);
+            }
+        }
+
+
+        @keyframes anichat {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <!-- style for chat box end -->
+</head>
+
+<body>
+    <!-- header section -->
+    <div id="head">
+        <!-- logo and slogon -->
+        <div id="logo">
+            <img src="logo.png" alt="" class="logo-img">
+            <p>Web Tech</p>
+        </div>
+        <div id="list">
+            <!-- menu list section -->
+            <ul>
+                <li><a href="index.html" style="color: #f01a1a;">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="work.html">Our Work</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div id="chat-box">
+
+            <i class="fa fa-whatsapp" id="chat-open" style="color: black;"> </i>
+
+        </div>
+        <!-- social link menu list -->
+        <div id="social-link">
+            <a href="https://wa.link/0tik09"><i class="fa fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/web.tech22/"><i class="fa fa-instagram"></i></a>
+            <a href="mailto:webtechinfo22@gmail.com"><i class="fa fa-envelope"></i></a>
+        </div>
+        <div id="menu-btn">
+            <i class="fa fa-bars" id="menu"></i>
+        </div>
+    </div>
+
+    <!-- mob div header start -->
+    <!-- <script src="script."></script> -->
+    <div id="mob-div">
+        <div id="mob-logo">
+            <div>
+                <img src="img/logotech.jpg" alt="logo" class="mob-logo">
+                <!-- <p>logo</p> -->
+            </div>
+            <div>
+                <i class="fa fa-close" id="close-btn"></i>
+            </div>
+        </div>
+        <div id="mob-social-link">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="work.html">Our Work</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <a href="https://wa.link/0tik09"><i class="fa fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/web.tech22/"><i class="fa fa-instagram"></i></a>
+                <a href="mailto:webtechinfo22@gmail.com"><i class="fa fa-envelope"></i></a>
+            </ul>
+        </div>
+    </div>
+    <!-- mob div header end -->
+
+    <!-- header section end -->
+
+    <!-- hero section start -->
+    <div id="hero">
+        <div id="hero-con">
+            <h3>Web Tech</h3>
+            <h2>Building a Smart Company: Find Your Perfect Web Space Today</h2>
+            <p>Our diverse range of services includes web development, web design, poster making, and video editing. Let
+                us introduce you to each of these services in detail.</p>
+
+            <button id="btn1"><a href="contact.html" style="color: white;text-decoration: none;">contact us</a></button>
+            <button id="btn2"> <a href="https://wa.link/0tik09"  style="color: rgb(0, 0, 0);text-decoration: none;">Let's Talk</a></button>
+        </div>
+        <div id="hero-img">
+            <img src="web tech main bg.png" alt="person-img" id="img-1">
+            <!-- <div id="circle">
+
+            </div> -->
+        </div>
+
+    </div>
+    <!-- hero end -->
+
+    <!-- about section with img -->
+    <div id="ab">
+        <div id="ab-con">
+            <div id="ab-con-main">
+                <h4>Web tech</h4>
+                <h1>web tech - We're Here To Help you to <span style="color: red;">Grow Business</span></h1>
+                <div class="bor">
+
+                </div>
+            </div>
+            <div class="row m-0 d-flex justify-content-center">
+                <div id="ab-con-mis" class="col-lg-5 col-12 ser-details">
+                    <img src="img/client-1.png" alt="cservices image" class="cser-img">
+                    <h4>Client-Centric Approach:</h4>
+                    <p>
+                        Our mission revolves around you, our valued client. We are dedicated to understanding your
+                        unique goals, challenges, and preferences.</p>
+                </div>
+                <div id="ab-con-team" class="col-lg-5 col-12 ser-details"> 
+                    <img src="img/client-2.png"
+                        alt="cservices image" class="cser-img">
+
+
+                    <h4>
+                        Client Success and Satisfaction:</h4>
+                    <p>Ultimately, our mission is centered on your success and satisfaction. We measure our achievements
+                        by the positive impact we have on your business or personal endeavors. </p>
+                </div>
+
+                <div id="ab-con-team" class="col-lg-5 col-12 ser-details">
+                    <img src="img/client-3.png" alt="cservices image" class="cser-img">
+                    <h4>
+                        Innovative Solutions:</h4>
+                    <p>We are passionate about staying at the forefront of technology and design trends. Our mission is
+                        to provide you with cutting-edge solutions that leverage the latest tools, techniques, and best
+                        practices.</p>
+                </div>
+
+                <div id="ab-con-team" class="col-lg-5 col-12 ser-details">
+                    <img src="img/client-4.png" alt="cservices image" class="cser-img">
+
+                    <h4>
+                        Quality and Attention to Detail:</h4>
+                    <p>Excellence is the cornerstone of our mission. We are committed to delivering solutions of the
+                        highest quality, paying meticulous attention to every detail</p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- about end -->
+
+   <!-- job asssistance sec -->
+<div id="main-job-sec">
+    <div id="job-a">
+        <h4 style="text-align:center;margin-top: 30px;font-size: 30px;">Choose Your Preferred <span style="color: red;">Learning Mode</span></h4>
+       
+        <div id="job-training-sec">          
+             <div class="job-training-list-inner">
+                <div id="tag-red" >
+                        <h6 style="color: white;">10% OFF</h6> 
+                    </div>
+                   <div>
+                   <i></i>
+                    <h5>WEB Development</h5>
+                    <p>Creating unique and tailor-made websites from scratch to meet specific client needs and requirements with less time and best Quality.</p>
+                   </div>
+               <div>
+                <button><a href="#">Get Started</a></button>
+               </div>
+        
+                </div>
+        
+                <div class="job-training-list-inner">
+                <div id="tag-red">
+                        <h6 style="color: white;">12% OFF</h6> 
+                    </div>
+                   <div >
+                    
+                   <i></i>
+                    <h5 >Web Design</h5>
+                    <p>Web design services involve the process of creating and designing websites to make them visually appealing, user-friendly, and functional. </p>
+                   </div>
+               <div>
+                <button><a href="#">Get Started</a></button>
+               </div>
+        
+                </div>
+        
+                <div class="job-training-list-inner">
+                <div id="tag-red">
+                        <h6 style="color: white;">5% OFF</h6> 
+                    </div>
+                   <div>
+                   <i></i>
+                    <h5>React Development</h5>
+                    <p>React development services involve utilizing React to create interactive and dynamic user interfaces that are responsive and efficient. </p>
+                   </div>
+               <div>
+                <button><a href="#">Get Started</a></button>
+               </div>
+                </div>
+        </div>
+    
+    </div>
+    </div>
+    <!-- end -->
+    
+    <!-- team section start -->
+    <div id="team-sec">
+        <h2>Meet Our Team</h2>
+        <div class="bor-2"></div>
+        <p id="min-p" style="text-align: center;">Our team comprises skilled professionals who are passionate about
+            their craft and stay up-to-date with the latest industry trends and technologies.</p>
+        <div id="team">
+            <div class="team-list">
+                <img src="team/team-1.jpg" alt="person-img-1" class="team-img-list">
+                <h3>Dilip Suthar</h3>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque vitae eaque ducimus aperiam omnis
+                    necessitatibus.</p> -->
+                <h5>Founder</h5>
+                <a href="https://www.instagram.com/d_sthr02/"><i class="fa fa-instagram"></i></a>
+                <a href="https://wa.link/0tik09"><i class="fa fa-whatsapp"></i></a>
+                <a href="tel:+91-7297834350"><i class="fa fa-phone"></i></a>
+            </div>
+            <div class="team-list">
+                <img src="team/team-4.jpg" alt="person-img-2" class="team-img-list">
+                <h3>Nena Ram</h3>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque vitae eaque ducimus aperiam omnis
+                    necessitatibus.</p> -->
+                <h5>CEO</h5>
+                <a href="https://instagram.com/tech_boy2810?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D "> <i class="fa fa-instagram"></i></a>
+               <a href="https://wa.link/hbsxib"> <i class="fa fa-whatsapp"></i></a>
+                <a href="tel:+91-7850945467"><i class="fa fa-phone"></i></a>
+            </div>
+
+            <div class="team-list">
+                <img src="team/team-2.jpg" alt="person-img-2" class="team-img-list">
+                <h3>Dinesh</h3>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque vitae eaque ducimus aperiam omnis
+                    necessitatibus.</p> -->
+                <h5>Wordpress Developer</h5>
+                <a href="https://www.instagram.com/mr_dineshanjana/"><i class="fa fa-instagram"></i></a>
+                <a href="https://wa.link/9ggf45"><i class="fa fa-whatsapp"></i></a>
+                <a href="tel:+91-9649204721"><i class="fa fa-phone"></i></a>
+            </div>
+
+            <div class="team-list">
+                <img src="team/team-3.jpg" alt="person-img-2" class="team-img-list">
+                <h3>Naresh</h3>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque vitae eaque ducimus aperiam omnis
+                    necessitatibus.</p> -->
+                <h5>Graphic Desiner</h5>
+                <a href="https://www.instagram.com/naresh__z/"><i class="fa fa-instagram"></i></a>
+              <a href="https://wa.link/v7g6br">  <i class="fa fa-whatsapp"></i></a>
+              <a href="tel:+91-8529458788"> <i class="fa fa-phone"></i></a>
+            </div>
+
+            <!-- <div class="team-list">
+                <img src="img/per-1.jpg" alt="person-img-4" class="team-img-list">
+                <h3>Gokul</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque vitae eaque ducimus aperiam omnis
+                    necessitatibus.</p>
+                <h5>Post (work)</h5>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-whatsapp"></i>
+                <i class="fa fa-phone"></i>
+            </div> -->
+        </div>
+    </div>
+    <!-- team section end
+     -->
+
+    <!-- work process -->
+    <div id="work-sec">
+        <h2>How Does We Work</h2>
+        <div class="bor-2"></div>
+        <p id="min-p-s" style="text-align: center;">
+            At our company, we are dedicated to providing a seamless and hassle-free experience to our valued clients.
+            We understand that effective communication, efficient processes, and round-the-clock support are essential
+            for your satisfaction.</p>
+        <div id="work">
+            <div class="work-list">
+                <!-- <img src="img/per-1.jpg" alt="work-img-1" class=""> -->
+                <i class="fa fa-phone"></i>
+                <h4>Call Up</h4>
+                <p style="margin-top: 10px;">We believe in the power of direct communication. Our team is readily
+                    available to assist you over the phone, answer your queries, and provide guidance on any aspect of
+                    our services. </p>
+            </div>
+            <div class="work-list">
+                <!-- <img src="img/per-1.jpg" alt="work-img-2" class="work-img"> -->
+                <i class="fa fa-check-square"></i>
+                <h4>Form Fill up</h4>
+                <p style="margin-top: 10px;">By filling out our forms, you can conveniently communicate your
+                    requirements and preferences, allowing us to better understand your needs and provide tailored
+                    solutions.
+                </p>
+            </div>
+            <div class="work-list">
+                <!-- <img src="img/per-1.jpg" alt="work-img-3" class="work-img"> -->
+                <i class="fa fa-group"></i>
+                <h4>24/7 Support</h4>
+                <p style="margin-top: 10px;">Our dedicated support team is available 24 hours a day, 7 days a week to
+                    address your concerns and ensure that your experience with our services remains uninterrupted and
+                    smooth.</p>
+            </div>
+        </div>
+    </div>
+    <!-- work process end -->
+
+    <!-- why choose us section start -->
+    <div id="wcu-sec">
+        <div id="wcu-con">
+            <h5>WHAT WE DO</h5>
+            <h2 id="h2-wcu">WHY CHOOSE US?</h2>
+            <div class="bor"></div>
+            <div class="wcu-inner-con">
+                <h2>Quality:</h2>
+                <p class="grey-p">We are committed to delivering high-quality results that exceed your expectations. Our
+                    attention to detail ensures that every aspect of your project is meticulously executed.</p>
+            </div>
+            <div class="wcu-inner-con">
+                <h2>Timely Delivery:</h2>
+                <p class="grey-p">We value your time and strive to deliver projects within the agreed-upon timelines,
+                    without compromising on quality.</p>
+            </div>
+
+        </div>
+        <div id="wcu-img">
+
+        </div>
+    </div>
+    <!-- why choose us section end -->
+
+    <!-- our special plan start-->
+    <div id="plan-sec">
+        <h2 id="plan-h2">Our Special Plan</h2>
+        <div class="bor-2"></div>
+        <p id="plan-p" style="text-align: center;">This exclusive plan offers a range of premium features and services
+            that will elevate your website to new heights of excellence.</p>
+        <div id="plan">
+            <div class="plan-list">
+                <h2>Basic PLan</h2>
+                <!-- <h4>$20 /month</h4>
+                <p> 3 Bedrooms cleaning </p>
+                <p>Vacuuming </p>
+                <p> 2 Bathroom cleaning </p>
+                <p>Mirror Cleaning </p>
+                <p>1 Livingroom cleaning </p>
+                <p>Window Sills </p> -->
+                <button>Contact Now</button>
+            </div>
+            <div class="plan-list">
+                <h2>Premium Plan</h2>
+                <!-- <h4>$35 /month</h4>
+                <p> 3 Bedrooms cleaning </p>
+                <p>Vacuuming </p>
+                <p> 2 Bathroom cleaning </p>
+                <p>Mirror Cleaning </p>
+                <p>1 Livingroom cleaning </p>
+                <p>Window Sills </p> -->
+                <button>Contact Now</button>
+            </div>
+            <div class="plan-list">
+                <h2>Standard Plan</h2>
+                <!-- <h4>$50 /month</h4>
+                <p> 3 Bedrooms cleaning </p>
+                <p>Vacuuming </p>
+                <p> 2 Bathroom cleaning </p>
+                <p>Mirror Cleaning </p>
+                <p>1 Livingroom cleaning </p>
+                <p>Window Sills </p> -->
+                <button>Contact Now</button>
+            </div>
+        </div>
+    </div>
+    <!-- our special plan end -->
+
+    <!-- our gallery section start-->
+    <div id="gal-sec">
+        <h5 id="gal-h5">Our Letest Work</h5>
+        <h2>Special Gallery</h2>
+        <div id="scroll-div">
+            <div class="img-list-gallery img-list-gallery-1"></div>
+            <div class="img-list-gallery img-list-gallery-2"></div>
+            <div class="img-list-gallery img-list-gallery-3"></div>
+            <div class="img-list-gallery img-list-gallery-4"></div>
+            <div class="img-list-gallery img-list-gallery-5"></div>
+            <div class="img-list-gallery img-list-gallery-6"></div>
+            <div class="img-list-gallery img-list-gallery-7"></div>
+            <div class="img-list-gallery img-list-gallery-8"></div>
+            <div class="img-list-gallery img-list-gallery-9"></div>
+            <div class="img-list-gallery img-list-gallery-10"></div>
+
+
+        </div>
+    </div>
+    <!-- our gallery section end-->
+
+    <!-- custumer reviews section start-->
+    <div id="cus-rev">
+        <h5 id="cus-rev-h5">Testimonial</h5>
+        <h2 id="cus-rev-h2">What Our Custumers Say</h2>
+        <div id="cus-rev-inner">
+            <div class="rev-list">
+                <div class="div-1-rev">
+                    <img src="img/per-1.jpg" alt="person-img" class="rev-img">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+
+                </div>
+                <div class="div-2-rev-con">
+                    <p>I recently had the pleasure of utilizing the services provided by [web tech], and I must say, I am thoroughly impressed. From start to finish, the experience was nothing short of exceptional.</p>
+                </div>
+                <div class="div-3-rev-mail">
+                    <i class="fa fa-mail"></i>
+                    <h5>suthardeepak833.com</h5>
+                </div>
+            </div>
+
+            <div class="rev-list">
+                <div class="div-1-rev">
+                    <img src="img/per-1.jpg" alt="person-img" class="rev-img">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+
+                </div>
+                <div class="div-2-rev-con">
+                    <p>First and foremost, their website is incredibly user-friendly and informative. It's clear that they understand the importance of presenting their services in a way that's easy to understand for individuals like me who aren't tech-savvy. </p>
+                </div>
+                <div class="div-3-rev-mail">
+                    <i class="fa fa-mail"></i>
+                    <h5>devsthr323@gmail.com</h5>
+                </div>
+            </div>
+
+            <div class="rev-list">
+                <div class="div-1-rev">
+                    <img src="img/per-1.jpg" alt="person-img" class="rev-img">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+
+                </div>
+                <div class="div-2-rev-con">
+                    <p>But what truly set [web tech] apart was their customer service. From the initial inquiry to the final resolution of my IT issue, their team was prompt, courteous, and highly knowledgeable.</p>
+                </div>
+                <div class="div-3-rev-mail">
+                    <i class="fa fa-mail"></i>
+                    <h5>solanki233@gmail.com</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- custumer reviews section end-->
+
+    <!-- skills list section start -->
+    <div id="skills-sec">
+        
+        <!-- <div class="bor-2"></div> -->
+        <h1 style="text-align: center;">Skillset</h1>
+        <div class='skillset'>
+                                    <div class='row'>
+                                        <div class='col'>
+        <h3>Languages</h3>
+          <ul class='languages'>
+            <div class="row" id="skills">
+                <div class="   col-12 outer-skills">
+                    <div id="inner-skills-1">
+                    </div>
+                    <div>
+                        <h5>Html</h5>
+                    </div>
+                </div>
+                <div class="   col-12  outer-skills">
+                    <div id="inner-skills-2"></div>
+                    <div>
+                        <h5>Css & Bootstrap</h5>
+                    </div>
+                </div>
+                <div class="   col-12  outer-skills">
+                    <div id="inner-skills-3"></div>
+                    <div>
+                        <h5>JS</h5>
+                    </div>
+                </div>
+                <div class="   col-12  outer-skills">
+                    <div id="inner-skills-4"></div>
+                    <div>
+                        <h5>PHP</h5>
+                    </div>
+                </div>
+                <div class="   col-12  outer-skills">
+                    <div id="inner-skills-5"></div>
+                    <div>
+                        <h5>Python</h5>
+                    </div>
+                </div>
+                <!-- <div class="   col-12  outer-skills">
+                    <div id="inner-skills-6"></div>
+                    <div>
+                        <h5>insta post</h5>
+                    </div>
+                </div> -->
+        
+            </div>
+          </ul>
+            <h3>Tools</h3>
+              <ul class='tools'>
+                <div class="row" id="skills">
+                    <div class="   col-12 outer-skills">
+                        <div id="inner-skills-1">
+                        </div>
+                        <div>
+                            <h5>Tailwind</h5>
+                        </div>
+                    </div>
+                    <!-- <div class="   col-12  outer-skills">
+                        <div id="inner-skills-2"></div>
+                        <div>
+                            <h5></h5>
+                        </div>
+                    </div> -->
+                    <!-- <div class="   col-12  outer-skills">
+                        <div id="inner-skills-3"></div>
+                        <div>
+                            <h5>video editing</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-4"></div>
+                        <div>
+                            <h5>poster making</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-5"></div>
+                        <div>
+                            <h5>logo creator</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-6"></div>
+                        <div>
+                            <h5>insta post</h5>
+                        </div>
+                    </div> -->
+        
+                </div>
+              </ul>
+        </div>
+        <div class='col'>
+          <h3>Frameworks</h3>
+            <ul class='frameworks'>
+                <div class="row" id="skills">
+                    <div class="   col-12 outer-skills">
+                        <div id="inner-skills-1">
+                        </div>
+                        <div>
+                            <h5>React</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-2"></div>
+                        <div>
+                            <h5>Bootstrap</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-3"></div>
+                        <div>
+                            <h5>J-Query</h5>
+                        </div>
+                    </div>
+                    <!-- <div class="   col-12  outer-skills">
+                        <div id="inner-skills-4"></div>
+                        <div>
+                            <h5>poster making</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-5"></div>
+                        <div>
+                            <h5>logo creator</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-6"></div>
+                        <div>
+                            <h5>insta post</h5>
+                        </div>
+                    </div> -->
+        
+                </div>
+          </ul>
+        </div>
+            <div class='col'>
+          <h3>Databases</h3>
+            <ul class='databases'>
+                <div class="row" id="skills">
+                    <div class="   col-12 outer-skills">
+                        <div id="inner-skills-1">
+                        </div>
+                        <div>
+                            <h5>MySQL</h5>
+                        </div>
+                    </div>
+                    <!-- <div class="   col-12  outer-skills">
+                        <div id="inner-skills-2"></div>
+                        <div>
+                            <h5>web development</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-3"></div>
+                        <div>
+                            <h5>video editing</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-4"></div>
+                        <div>
+                            <h5>poster making</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-5"></div>
+                        <div>
+                            <h5>logo creator</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-6"></div>
+                        <div>
+                            <h5>insta post</h5>
+                        </div>
+                    </div> -->
+        
+                </div>
+          </ul>
+          <h3>Operative Systems</h3>
+            <ul class='os'>
+                <div class="row" id="skills">
+                    <div class="   col-12 outer-skills">
+                        <div id="inner-skills-1">
+                        </div>
+                        <div>
+                            <h5>OS</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-2"></div>
+                        <div>
+                            <h5>Linux</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-3"></div>
+                        <div>
+                            <h5>MAC</h5>
+                        </div>
+                    </div>
+                    <!-- <div class="   col-12  outer-skills">
+                        <div id="inner-skills-4"></div>
+                        <div>
+                            <h5>poster making</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-5"></div>
+                        <div>
+                            <h5>logo creator</h5>
+                        </div>
+                    </div>
+                    <div class="   col-12  outer-skills">
+                        <div id="inner-skills-6"></div>
+                        <div>
+                            <h5>insta post</h5>
+                        </div>
+                    </div> -->
+        
+                </div>
+          </ul>
+        </div>
+        </div>
+        </div>
+    </div>
+    <!-- skills list section end -->
+
+    <!-- chat box start -->
+    <div id="en-main">
+   
+           <i class="fa fa-close" style="float: right;font-size: 17px;padding: 4px;background-color:red;color: white;border-radius: 50px;" id="close-btn2"></i>
+            <div id="chat-box-main-inner">
+                <div id="chat-scroll"><a href="#cb-head"><i class="fa fa-angle-up"></i></a></div>
+                <h5 id="cb-head">Web Tech , Let's Talk</h5>
+                 <div class="option-chat">
+                     
+                        <p id="chat-1" class="chat-link"><a href="#web-head-1">1.web development</a></p>
+                    <p>2.Web Design</p>
+                    <p>3.React Developer</p>
+                    <p>4.Video Editing</p>
+                    <p>5.SEO</p>
+                 </div>
+                  
+                 <div class="fixed-msg">
+                      
+                      <p>Type Number or Click on Servies </p>
+                 </div>
+    
+                 <div class="response-chat-box">
+                       <h5 id="rcb"></h5>
+                 </div>
+    
+                 <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="Choose What U want?">
+                    <button onclick="chatrep()" style="background: red;"><i class="fa fa-send-o" style="color: white;"></i></button>
+                 </div>
+            </div>
+        
+    </div>
+    <!-- chat box end -->
+     <!-- web-dev chat box form -->
+    <div class="modal fade" id="chatbr"  role="dialog" aria-hidden="true" tabindex="1" aria-labelledby="exampleModalLongTitle" >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Web Development</h5>
+              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5>web development service::</h5>
+              <button class="chat-btn-con"> E-commerce</button>
+              <button class="chat-btn-con"> IT-company</button>
+              <button class="chat-btn-con"> Business</button>
+
+              <form action="">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Mobile Number</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Example select</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>E-commerce</option>
+                      <option>Business</option>
+                      <option>personal</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                  <button type="submit" class="btn btn-success">Submit</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- web dev chat form end -->
+
+         <!-- web-dev chat box form -->
+    <div class="modal fade" id="chatbr2"  role="dialog" aria-hidden="true" tabindex="1" aria-labelledby="exampleModalLongTitle" >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Web Design</h5>
+              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5>Web Design service::</h5>
+              <button class="chat-btn-con"> Ux</button>
+              <button class="chat-btn-con"> Interface</button>
+              <button class="chat-btn-con"> Seo</button>
+
+              <form action="">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Mobile Number</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Example select</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>UX</option>
+                      <option>Interface</option>
+                      <option>Seo</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                  <button type="submit" class="btn btn-success">Submit</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- web dev chat form end -->
+
+         <!-- web-dev chat box form -->
+    <div class="modal fade" id="chatbr3"  role="dialog" aria-hidden="true" tabindex="1" aria-labelledby="exampleModalLongTitle" >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">React Development</h5>
+              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5>React Development service::</h5>
+              <button class="chat-btn-con"> E-commerce</button>
+              <button class="chat-btn-con"> IT-company</button>
+              <button class="chat-btn-con"> Business</button>
+
+              <form action="">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Mobile Number</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Example select</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>E-commerce</option>
+                      <option>Business</option>
+                      <option>personal</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                  <button type="submit" class="btn btn-success">Submit</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- web dev chat form end -->
+
+         <!-- web-dev chat box form -->
+    <div class="modal fade" id="chatbr4"  role="dialog" aria-hidden="true" tabindex="1" aria-labelledby="exampleModalLongTitle" >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Video Editting</h5>
+              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5>Video Editing service::</h5>
+
+              <button class="chat-btn-con"> Ads</button>
+    <button class="chat-btn-con"> Cinematic</button>
+    <button class="chat-btn-con"> Teaser</button>
+    <button class="chat-btn-con"> Marketing</button>
+
+              <form action="">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Mobile Number</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Example select</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>Ads</option>
+                      <option>Cinematic</option>
+                      <option>Teaser</option>
+                      <option >Marketing</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                  <button type="submit" class="btn btn-success">Submit</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- web dev chat form end -->
+
+         <!-- web-dev chat box form -->
+    <div class="modal fade" id="chatbr5"  role="dialog" aria-hidden="true" tabindex="1" aria-labelledby="exampleModalLongTitle" >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Seo Management</h5>
+              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5>Seo Management service::</h5>
+              <button class="chat-btn-con"> Title</button>
+              <button class="chat-btn-con"> Meta</button>
+              <button class="chat-btn-con"> Header</button>
+              
+              <form action="">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Mobile Number</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Example select</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>Title</option>
+                      <option>Meta Data</option>
+                      <option>Header</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                  <button type="submit" class="btn btn-success">Submit</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- web dev chat form end -->
+    <!-- footer -->
+    <div id="footer-sec">
+        <div id="footer-img">
+            <img src="logo.png" alt="" id="footer-img">
+            <p>Web Tech serve many services on time and fullfill the requirment of the clients</p>
+        </div>
+        <div class="footer-link" id="footer-1">
+            
+            <ul>
+                <p>Links</p>
+                <li>About</li>
+                <li>Services</li>
+                <li>Team</li>
+                <!-- <li>work</li> -->
+                <li>contact us</li>
+            </ul>
+        </div>
+        <div class="footer-link" id="footer-2">
+           
+            <ul>
+                <p>services</p>
+                <li>web design</li>
+                <li>web development</li>
+                <li>video editing</li>
+                <li>Graphic Design</li>
+                <li>Seo Management</li>
+            </ul>
+        </div>
+        <div class="footer-link" id="footer-3">
+           
+            <ul>
+                <p>contact</p>
+                <li>Phone:</li>
+                <li>+91-7297834350</li>
+                <li>Email:</li>
+                <li>webtechinfo22@gmail.com</li>
+                <a href="https://wa.link/0tik09"><i class="fa fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/web.tech22/"><i class="fa fa-instagram"></i></a>
+                <a href="mailto:webtechinfo22@gmail.com"><i class="fa fa-envelope"></i></a>
+            </ul>
+         
+  
+        </div>
+  
+       </div>
+    <!-- all modal here redirect to the google form -->
+
+<!-- Modal -->
+
+    <!-- end -->
+    <!-- fopter end -->
+
+    <script src="script.js"></script>
+    <script src="chat.js"></script>
+    <script>    
+        ScrollReveal({
+            reset: false,
+            distance: '0px',
+            duration: 2000,
+            delay: 200,
+        });
+        ScrollReveal().reveal('#hero-con h3 ,#btn1, #btn2 ,#ab-con-main,.list-1,.list-5,#team-sec h2,.work-inner-con,#plan-h2,.img-list-gallery-1,.img-list-gallery-5,.img-list-gallery-9,#cus-rev-h2,#footer-img', { delay: 100, origin: 'left' });
+
+        ScrollReveal().reveal('#hero-img,#ab-con-team,.list-2,.list-6,.bor-2,#work-sec h2,#min-p-s,#wcu-con h5,#plan-p,#gal-h5,.img-list-gallery-2,.img-list-gallery-6,.img-list-gallery-10,.rev-list,#skills-sec h4,#footer-1', { delay: 100, origin: 'top' });
+
+        ScrollReveal().reveal('#hero-con h2, #hero-con p,#ab-con-mis,.list-3,.list-7,#min-p,#h2-wcu,.img-list-gallery-3,.img-list-gallery-7,#cus-rev-h5,#footer-2', { delay: 50, origin: 'right' });
+
+        ScrollReveal().reveal('#ser-con,.list-4,.list-8,.team-list,.work-list,#wcu-img,.plan-list,.img-list-gallery-4,.img-list-gallery-8,.outer-skills,#footer-3', { delay: 100, origin: 'bottom' });
+    </script>
+</body>
+
+</html>
